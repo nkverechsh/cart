@@ -3,8 +3,15 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: StratosSkyeng, sans-serif;
+  font-weight: 400;
+  src: url("/src/fonts/stratosskyengweb-semilight.woff2") format("woff2"), url("/src/fonts/stratosskyengweb-semilight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font-family: sans-serif;
+  font-family: StratosSkyeng, sans-serif;
 }
 
 .screen {
