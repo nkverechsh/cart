@@ -12,7 +12,8 @@ $level-buttons-bg-color: #fff;
 @font-face {
   font-family: StratosSkyeng, sans-serif;
   font-weight: 400;
-  src: url("/src/fonts/stratosskyengweb-semilight.woff2") format("woff2"),
+  src:
+    url("/src/fonts/stratosskyengweb-semilight.woff2") format("woff2"),
     url("/src/fonts/stratosskyengweb-semilight.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -55,7 +56,9 @@ body {
     font-size: 40px;
     line-height: 48px;
     text-align: center;
-    font-feature-settings: "pnum" on, "lnum" on;
+    font-feature-settings:
+      "pnum" on,
+      "lnum" on;
   }
 }
 
@@ -90,7 +93,9 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
 
     &_selected {
       transform: scale(1.05);
