@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.screen {
+  min-height: 774px;
+  width: 1024px;
+  background-color: #004980;
+}
+
+.window {
+  height: 774px;
+  width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.window__content {
+  width: 480px;
+  height: 459px;
+  border-radius: 12px;
+  background-color: #c2f5ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.window__title {
+  width: 250px;
+  color: #004980;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.button {
+  width: 246px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background-color: #7ac100;
+  color: #fff;
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.difficulty {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.difficulty__button {
+  width: 98px;
+  height: 98px;
+  border-radius: 12px;
+  background-color: #fff;
+  color: #0080c1;
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.difficulty__button_selected {
+  transform: scale(1.05);
+  box-shadow: 10px 5px 5px #0080c1;
+}
+
+.game {
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timer {
+  display: flex;
+  align-items: end;
+  color: #fff;
+}
+.timer__min, .timer__sec {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.timer__label {
+  font-size: 16px;
+}
+.timer__value {
+  font-size: 64px;
+  line-height: 64px;
+}
+
+.field {
+  display: grid;
+  justify-items: center;
+}
+
+.cart {
+  margin: 10px 0;
+  cursor: pointer;
+}
+.cart__front, .cart__back {
+  width: 95px;
+  height: 133px;
+}
+.cart__front_hidden, .cart__back_hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
