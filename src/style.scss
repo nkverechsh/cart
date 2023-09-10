@@ -20,34 +20,50 @@ $level-buttons-bg-color: #fff;
 }
 
 body {
-  font-family: StratosSkyeng, sans-serif;
+    font-family: sans-serif;
 }
 
 .screen {
-  min-height: 774px;
-  width: 1024px;
-  background-color: $bg-color;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #004980;
 }
 
 .window {
-  height: 774px;
-  width: 1024px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
 
-  &__content {
+.window__content {
     width: 480px;
     height: 459px;
     border-radius: 12px;
-    background-color: $modal-color;
+    background-color: #c2f5ff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-  }
+}
 
-  &__title {
+.window__title {
     width: 250px;
     color: #004980;
     font-family: sans-serif;
@@ -56,107 +72,143 @@ body {
     font-size: 40px;
     line-height: 48px;
     text-align: center;
-    font-feature-settings:
-      "pnum" on,
-      "lnum" on;
-  }
+    -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 .button {
-  width: 246px;
-  height: 50px;
-  border: none;
-  border-radius: 12px;
-  background-color: $btn-color;
-  color: #fff;
-  font-family: sans-serif;
-  font-style: normal;
-  font-size: 24px;
-  cursor: pointer;
+    width: 246px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: #7ac100;
+    color: #fff;
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .difficulty {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 24px;
+}
 
-  &__button {
+.difficulty__button {
     width: 98px;
     height: 98px;
     border-radius: 12px;
-    background-color: $level-buttons-bg-color;
-    color: $color-for-level-buttons;
+    background-color: #fff;
+    color: #0080c1;
     font-family: sans-serif;
     font-style: normal;
     font-size: 64px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     cursor: pointer;
-    transition:
-      transform 0.3s,
-      box-shadow 0.3s;
+    -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+    transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s,
+        -webkit-box-shadow 0.3s;
+}
 
-    &_selected {
-      transform: scale(1.05);
-      box-shadow: 10px 5px 5px $color-for-level-buttons;
-    }
-  }
+.difficulty__button_selected {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-box-shadow: 10px 5px 5px #0080c1;
+    box-shadow: 10px 5px 5px #0080c1;
 }
 
 .game {
-  height: 100%;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
+    height: 100%;
+    padding: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 35px;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .timer {
-  display: flex;
-  align-items: end;
-  color: #fff;
-
-  &__min,
-  &__sec {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: end;
-  }
+    color: #fff;
+}
 
-  &__label {
+.timer__min,
+.timer__sec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: end;
+}
+
+.timer__label {
     font-size: 16px;
-  }
+}
 
-  &__value {
+.timer__value {
     font-size: 64px;
     line-height: 64px;
-  }
 }
 
 .field {
-  display: grid;
-  justify-items: center;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
 }
 
 .cart {
-  margin: 10px 0;
-  cursor: pointer;
+    margin: 10px 0;
+    cursor: pointer;
+}
 
-  &__front,
-  &__back {
+.cart__front,
+.cart__back {
     width: 95px;
     height: 133px;
-  }
-
-  &__front_hidden,
-  &__back_hidden {
-    display: none;
-  }
 }
+
+.cart__front_hidden,
+.cart__back_hidden {
+    display: none;
+}
+/*# sourceMappingURL=style.css.map */
