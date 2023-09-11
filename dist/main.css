@@ -1,3 +1,6 @@
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style.css ***!
+  \********************************************************************************************************/
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +9,10 @@
 @font-face {
   font-family: StratosSkyeng, sans-serif;
   font-weight: 400;
-  src: url("/src/fonts/stratosskyengweb-semilight.woff2") format("woff2"), url("/src/fonts/stratosskyengweb-semilight.woff") format("woff");
+  src: url(f53f4f95055cd086dd04.woff2) format("woff2"), url(1e49990d9395319be12c.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 body {
   font-family: sans-serif;
 }
@@ -64,8 +66,8 @@ body {
   font-size: 40px;
   line-height: 48px;
   text-align: center;
-  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
-  font-feature-settings: 'pnum' on, 'lnum' on;
+  -webkit-font-feature-settings: "pnum" on, "lnum" on;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 
 .button {
@@ -113,8 +115,7 @@ body {
   -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
   transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
   transition: transform 0.3s, box-shadow 0.3s;
-  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s,
-      -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
 }
 
 .difficulty__button_selected {
@@ -203,4 +204,7 @@ body {
 .cart__back_hidden {
   display: none;
 }
-/*# sourceMappingURL=style.css.map */
+
+
+
+/*# sourceMappingURL=main.css.map*/
