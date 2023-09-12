@@ -1,8 +1,10 @@
 import './style.css';
 import { GameTimer } from './timer';
 import { renderFirstScreen } from './firstScreen';
-import { mixArrays, Cart } from './lib/utilityFunctions';
+import { multArrays, Cart } from './lib/utilityFunctions';
+
 const appElement: HTMLElement | null = document.querySelector('.app');
+
 type Difficulty = {
     buttonText: string;
     cartsCount: number;
@@ -11,6 +13,7 @@ type Difficulty = {
         columns: number;
     };
 };
+
 declare global {
     interface Window {
         appState: {
@@ -49,6 +52,7 @@ window.appState = {
 };
 
 window.timer = new GameTimer();
+
 window.DIFFICULTIES = {
     low: {
         buttonText: '1',
@@ -75,10 +79,12 @@ window.DIFFICULTIES = {
         },
     },
 };
+
 const SUITS = ['hearts', 'diamonds', 'crosses', 'spades'];
+
 const RANKS = ['6', '7', '8', '9', '10', 'Q', 'K', 'J', 'A'];
 
-window.CARTS = mixArrays(SUITS, RANKS, 'suit', 'rank');
+window.CARTS = multArrays(SUITS, RANKS, 'suit', 'rank');
 
 window.STATUSES = {
     ok: 'ok',
@@ -103,4 +109,5 @@ console.log(window.CARTS);
 if (appElement !== null) {
     renderFirstScreen(appElement);
 }
+
 export { appElement };

@@ -3,10 +3,13 @@ import { clearElement, takeCartsForPlay } from './lib/utilityFunctions';
 import { renderFirstScreen } from './firstScreen';
 import { appElement } from './main';
 import { Cart } from './lib/utilityFunctions';
+
 const imgPath = './static';
+
 function renderGameScreen(component) {
     console.log(`Игра на сложности ${window.appState.difficulty}`);
     component.appendChild(templateEngine(gameScreenTemplate()));
+
     setTimer(component);
     setPlayAgainHandler(component, '.button');
     const timeoutForRemember = setTimeout(() => {
@@ -17,6 +20,7 @@ function renderGameScreen(component) {
         clearTimeout(timeoutForRemember);
     }, 5000);
 }
+
 function setPlayAgainHandler(component: HTMLElement, selector: string) {
     const button = component.querySelector(selector);
     button?.addEventListener('click', () => {
@@ -27,15 +31,18 @@ function setPlayAgainHandler(component: HTMLElement, selector: string) {
         }
     });
 }
+
 function setTimer(component: HTMLElement) {
     const minutesElement = component.querySelector('.timer__min .timer__value');
     const secondsElement = component.querySelector('.timer__sec .timer__value');
     window.timer.setTimeElements(minutesElement, secondsElement);
 }
+
 function setCartClickHandler(component: HTMLElement) {
     const cartsField = component.querySelector('.field');
     const doCheck = createChecker();
     cartsField?.addEventListener('click', cartClickHandler);
+
     function cartClickHandler(event: Event) {
         const { target } = event;
         if (!(target instanceof HTMLElement)) {
@@ -70,6 +77,7 @@ function setCartClickHandler(component: HTMLElement) {
         }
     }
 }
+
 function showResult(component, template) {
     const screenElement = component.querySelector('.screen');
     const gameElement = component.querySelector('.game');
@@ -102,6 +110,7 @@ function createChecker() {
     }
     return doCheck;
 }
+
 function turnCart(cartElement) {
     const { suit, rank, side } = cartElement.dataset;
     console.log(rank, suit, side);
@@ -124,10 +133,12 @@ function turnCart(cartElement) {
         cartElement.dataset.side = 'front';
     }
 }
+
 function turnAllCards(component) {
     const carts = component.querySelectorAll('.cart');
     carts.forEach(turnCart);
 }
+
 function gameScreenTemplate() {
     return {
         tag: 'div',
@@ -200,6 +211,7 @@ function gameScreenTemplate() {
         },
     };
 }
+
 function endWindowTemplate(image: string, message: string, duration: string) {
     return {
         tag: 'div',
@@ -248,6 +260,7 @@ function endWindowTemplate(image: string, message: string, duration: string) {
         },
     };
 }
+
 function setGridStyle() {
     const difficulty = window.appState.difficulty;
     const layout = window.DIFFICULTIES[difficulty].layout;
@@ -255,6 +268,7 @@ function setGridStyle() {
         style: `grid-template-columns: repeat(${layout.columns}, 1fr);grid-template-rows: repeat(${layout.rows}, 1fr);`,
     };
 }
+
 function renderCarts() {
     const difficulty = window.appState.difficulty;
     const cartsCount = window.DIFFICULTIES[difficulty].cartsCount;
@@ -262,6 +276,7 @@ function renderCarts() {
     const carts = takeCartsForPlay(cartsCount);
     return carts.map(renderCart);
 }
+
 function renderCart(cart: Cart) {
     const { suit, rank, id } = cart;
     console.log('Карта № ' + id);
@@ -292,4 +307,5 @@ function renderCart(cart: Cart) {
         ],
     };
 }
+
 export { renderGameScreen };

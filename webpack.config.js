@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -48,6 +49,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html',
         }),
-    ],
+    ], //new ExtractTextPlugin('style.css')
     mode: isProduction ? 'production' : 'development',
 };

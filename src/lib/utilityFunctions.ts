@@ -8,7 +8,7 @@ function clearElement(element: HTMLElement) {
   element.textContent = '';
 }
 
-function mixArrays(
+function multArrays(
   array1: string[],
   array2: string[],
   prop1Name: string,
@@ -30,6 +30,9 @@ function mixArrays(
 }
 
 function takeCarts(count: number, set: Cart[]) {
+  if (count > set.length) {
+      count = set.length;
+  }
   const cartSet = [...set];
   const takedCarts: Cart[] = [];
   for (let i = 0; i < count; i++) {
@@ -45,4 +48,5 @@ function takeCartsForPlay(cartsCunt: number) {
   const cartsForPlay = [...uniqCarts, ...uniqCarts];
   return takeCarts(cartsForPlay.length, cartsForPlay);
 }
-export { clearElement, mixArrays, takeCartsForPlay, Cart };
+
+export { clearElement, multArrays, takeCartsForPlay, Cart, takeCarts };
