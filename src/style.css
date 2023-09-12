@@ -10,7 +10,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 body {
   font-family: sans-serif;
 }
@@ -24,39 +23,25 @@ body {
 .window {
   height: 100vh;
   width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
-
 .window__content {
   width: 480px;
   height: 459px;
   border-radius: 12px;
   background-color: #c2f5ff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
-
 .window__title {
-  width: 250px;
+  width: 300px;
   color: #004980;
   font-family: sans-serif;
   font-style: normal;
@@ -64,8 +49,21 @@ body {
   font-size: 40px;
   line-height: 48px;
   text-align: center;
-  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
-  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.time-spent {
+  font-weight: 400;
+  color: black;
+  text-align: center;
+}
+.time-spent__text {
+  font-size: 24px;
+  line-height: 32px;
+}
+.time-spent__time {
+  font-size: 64px;
+  line-height: 72px;
 }
 
 .button {
@@ -82,15 +80,10 @@ body {
 }
 
 .difficulty {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   gap: 24px;
 }
-
 .difficulty__button {
   width: 98px;
   height: 98px;
@@ -100,90 +93,50 @@ body {
   font-family: sans-serif;
   font-style: normal;
   font-size: 64px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
-  transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
   transition: transform 0.3s, box-shadow 0.3s;
-  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s,
-      -webkit-box-shadow 0.3s;
 }
-
 .difficulty__button_selected {
-  -webkit-transform: scale(1.05);
   transform: scale(1.05);
-  -webkit-box-shadow: 10px 5px 5px #0080c1;
   box-shadow: 10px 5px 5px #0080c1;
 }
 
 .game {
   height: 100%;
   padding: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   gap: 35px;
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
 .timer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
   align-items: end;
   color: #fff;
 }
-
-.timer__min,
-.timer__sec {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.timer__min, .timer__sec {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
   align-items: end;
 }
-
 .timer__label {
   font-size: 16px;
 }
-
 .timer__value {
   font-size: 64px;
   line-height: 64px;
 }
 
 .field {
-  display: -ms-grid;
   display: grid;
   justify-items: center;
 }
@@ -192,15 +145,10 @@ body {
   margin: 10px 0;
   cursor: pointer;
 }
-
-.cart__front,
-.cart__back {
+.cart__front, .cart__back {
   width: 95px;
   height: 133px;
 }
-
-.cart__front_hidden,
-.cart__back_hidden {
+.cart__front_hidden, .cart__back_hidden {
   display: none;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
