@@ -1,79 +1,79 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { GameTimer } = require('./timer');
+const { GameTimer } = require("./timer");
 
-describe('GameTimer', () => {
-    it('should create interval by run method', () => {
-        Object.defineProperty(global, 'window', {
-            value: {
-                appState: {
-                    gameDuration: 0,
-                },
-            },
-            writable: true,
-        });
-        const testTimer = new GameTimer();
-
-        testTimer.run();
-        testTimer.interval.unref();
-
-        expect(testTimer.interval).toBeTruthy();
+describe("GameTimer", () => {
+  it("should create interval by run method", () => {
+    Object.defineProperty(global, "window", {
+      value: {
+        appState: {
+          gameDuration: 0,
+        },
+      },
+      writable: true,
     });
+    const testTimer = new GameTimer();
 
-    it('should clear interval', () => {
-        Object.defineProperty(global, 'window', {
-            value: {
-                appState: {
-                    gameDuration: 0,
-                },
-            },
-            writable: true,
-        });
-        const testTimer = new GameTimer();
+    testTimer.run();
+    testTimer.interval.unref();
 
-        testTimer.run();
-        testTimer.clear();
+    expect(testTimer.interval).toBeTruthy();
+  });
 
-        expect(testTimer.interval._destroyed).toBe(true);
+  it("should clear interval", () => {
+    Object.defineProperty(global, "window", {
+      value: {
+        appState: {
+          gameDuration: 0,
+        },
+      },
+      writable: true,
     });
+    const testTimer = new GameTimer();
 
-    it('should return 1 minute', () => {
-        Object.defineProperty(global, 'window', {
-            value: {
-                appState: {
-                    gameDuration: 60000,
-                },
-            },
-            writable: true,
-        });
-        const testTimer = new GameTimer();
+    testTimer.run();
+    testTimer.clear();
 
-        const minutes = testTimer.getMinutes();
+    expect(testTimer.interval._destroyed).toBe(true);
+  });
 
-        expect(minutes).toEqual(1);
+  it("should return 1 minute", () => {
+    Object.defineProperty(global, "window", {
+      value: {
+        appState: {
+          gameDuration: 60000,
+        },
+      },
+      writable: true,
     });
+    const testTimer = new GameTimer();
 
-    it('should return 30 seconds', () => {
-        Object.defineProperty(global, 'window', {
-            value: {
-                appState: {
-                    gameDuration: 90000,
-                },
-            },
-            writable: true,
-        });
-        const testTimer = new GameTimer();
+    const minutes = testTimer.getMinutes();
 
-        const minutes = testTimer.getSeconds();
+    expect(minutes).toEqual(1);
+  });
 
-        expect(minutes).toEqual(30);
+  it("should return 30 seconds", () => {
+    Object.defineProperty(global, "window", {
+      value: {
+        appState: {
+          gameDuration: 90000,
+        },
+      },
+      writable: true,
     });
+    const testTimer = new GameTimer();
 
-    it('should show number as 2-signed string', () => {
-        const testTimer = new GameTimer();
-        const number = 1;
+    const minutes = testTimer.getSeconds();
 
-        const string = testTimer.formatValues(number);
+    expect(minutes).toEqual(30);
+  });
 
-        expect(string).toEqual('01');
-    });
+  it("should show number as 2-signed string", () => {
+    const testTimer = new GameTimer();
+    const number = 1;
+
+    const string = testTimer.formatValues(number);
+
+    expect(string).toEqual("01");
+  });
 });
