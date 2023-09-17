@@ -5,36 +5,39 @@ interface Cart {
 }
 
 function clearElement(element: HTMLElement) {
-  element.textContent = '';
+  element.textContent = "";
 }
 
-function mixArrays(
+function multArrays(
   array1: string[],
   array2: string[],
   prop1Name: string,
-  prop2Name: string
+  prop2Name: string,
 ) {
   const resultArray: Cart[] = [];
   let id = 1;
   for (let i = 0; i < array1.length; i++) {
-      for (let j = 0; j < array2.length; j++) {
-          resultArray.push({
-              id: id,
-              [prop1Name]: array1[i],
-              [prop2Name]: array2[j],
-          });
-          id++;
-      }
+    for (let j = 0; j < array2.length; j++) {
+      resultArray.push({
+        id: id,
+        [prop1Name]: array1[i],
+        [prop2Name]: array2[j],
+      });
+      id++;
+    }
   }
   return resultArray;
 }
 
 function takeCarts(count: number, set: Cart[]) {
+  if (count > set.length) {
+    count = set.length;
+  }
   const cartSet = [...set];
   const takedCarts: Cart[] = [];
   for (let i = 0; i < count; i++) {
-      const randomIndex = Math.floor(Math.random() * cartSet.length);
-      takedCarts.push(cartSet.splice(randomIndex, 1)[0]);
+    const randomIndex = Math.floor(Math.random() * cartSet.length);
+    takedCarts.push(cartSet.splice(randomIndex, 1)[0]);
   }
   return takedCarts;
 }
@@ -45,4 +48,5 @@ function takeCartsForPlay(cartsCunt: number) {
   const cartsForPlay = [...uniqCarts, ...uniqCarts];
   return takeCarts(cartsForPlay.length, cartsForPlay);
 }
-export { clearElement, mixArrays, takeCartsForPlay, Cart };
+
+export { clearElement, multArrays, takeCartsForPlay, Cart, takeCarts };
